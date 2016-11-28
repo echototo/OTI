@@ -1,0 +1,6 @@
+JUnit 4
+
+	-	Le test est en failure au niveau de l'égalité de l'assert
+	-	Si le test respecte les spécifications fonctionnelles et qu'il est en echec, 
+	alors c'est que la classe testée n'est pas implémentée correctement.
+	-	Il faut surcharger la méthode equals de la classe Money. En effet, la méthode equals renvoie par défaut l'identifiant de l'objet	

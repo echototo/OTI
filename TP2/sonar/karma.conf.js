@@ -7,18 +7,19 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['qunit'], //remplacer par frameworks: ['qunit','sinon'] - si usage de sinon
+    frameworks: ['qunit','sinon'], //remplacer par frameworks: ['qunit','sinon'] - si usage de sinon
 
 
     // list of files / patterns to load in the browser
     files: [
       'src/*.js',
-      'test_sinon/money_test.js'
+      'test_sinon/*.js'
     ],
 
 
     // list of files to exclude
     exclude: [
+      'test_sinon/money_test_suite.js'
     ],
 
 

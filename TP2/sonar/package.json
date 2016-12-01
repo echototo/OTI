@@ -9,6 +9,7 @@
     "karma-coverage": "^1.1.1",
     "karma-firefox-launcher": "^1.0.0",
     "karma-qunit": "^1.2.1",
+    "karma-sinon": "^1.0.5",
     "qunitjs": "^2.0.1",
     "sinon": "^1.17.6",
     "sinon-qunit": "^2.0.0"

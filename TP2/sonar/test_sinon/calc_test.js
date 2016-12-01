@@ -63,13 +63,14 @@ QUnit.test("test_computeResultsSubValueIncompatibleExc", function(assert)
         var fixtureNode=document.getElementById("qunit-fixture");
         fixtureNode.innerHTML=fixture;
 
-        var alert = this.stub(window, "alert" );
+        var alert = sinon.stub(window, "alert" );
 
 
         var c=new calc();
         c.computeResult(document.getElementById('form0'));
         assert.equal(c.message,"First param must be bigger than second");
         assert.ok(alert.calledOnce);
+        window.alert.restore();
 }
 );
 
@@ -89,13 +90,14 @@ QUnit.test("testDevisesIncompatibles", function(assert)
         var fixtureNode=document.getElementById("qunit-fixture");
         fixtureNode.innerHTML=fixture;
 
-        var alert = this.stub(window, "alert" );
+        var alert = sinon.stub(window, "alert" );
 
 
         var c=new calc();
         c.computeResult(document.getElementById('form0'));
         assert.equal(c.message,"Devises incompatibles : EU vs CH");
         assert.ok(alert.calledOnce);
+        window.alert.restore();
 }
 );
 
@@ -115,12 +117,13 @@ QUnit.test("test_computeresults_other", function(assert)
         var fixtureNode=document.getElementById("qunit-fixture");
         fixtureNode.innerHTML=fixture;
 
-        var alert = this.stub(window, "alert" );
+        var alert = sinon.stub(window, "alert" );
 
         var c=new calc();
         c.computeResult(document.getElementById('form0'));
         assert.equal(c.message,"Unsupported operation TOTO");
         assert.ok(alert.calledOnce);
+        window.alert.restore();
 }
 );
 

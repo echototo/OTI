@@ -19,8 +19,12 @@ calc.prototype.computeResult=function (form) {
                     res=MoneyOps.add(m1,m2);
                     this.message="Result : "+(res.toString())+"";
 
+                } else if(ops=="SUB") {
+                    res=MoneyOps.sub(m1,m2);
+                    this.message="Result : "+(res.toString())+"";
+
                 } else {
-                    this.message="Unsupported operation "+ops+"";
+                    this.message="Unsupported operation "+ops;
 
                 }
             }catch (e) {

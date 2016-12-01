@@ -1,12 +1,19 @@
 function calc() {
         this.message="";
+
 }
 
 calc.prototype.displayResult=function (resultDiv) {
-            resultDiv.innerHTML="Result : "+this.message;
+            resultDiv.style.color="#000000";
+            if(!this.message.startsWith("Result")){
+              resultDiv.style.color="#FF0000";
+            }
+            
+            resultDiv.innerHTML=this.message;
 };
 
 calc.prototype.computeResult=function (form) {
+          try{
             m1=new money(parseInt(form.elements['v1'].value),
                             form.elements['c1'].value);
             m2=new money(parseInt(form.elements['v2'].value),
@@ -14,17 +21,22 @@ calc.prototype.computeResult=function (form) {
 
             ops=form.elements['ops'].value;
 
-            try{
                 if (ops==="ADD") {
                     res=MoneyOps.add(m1,m2);
-                    this.message="Result : "+(res.toString())+"";
+                    this.message="Result : "+res.toString();
+
+                } else if(ops=="SUB") {
+                    res=MoneyOps.sub(m1,m2);
+                    this.message="Result : "+res.toString();
 
                 } else {
                     this.message="Unsupported operation "+ops+"";
+                    window.alert(this.message);
 
                 }
             }catch (e) {
                 this.message=e.toString();
+                window.alert(this.message);
 
             }
 	};

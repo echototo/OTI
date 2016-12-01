@@ -1,4 +1,4 @@
-QUnit.module("calc", {
+  QUnit.module("calc", {
 //	setup:function(){alert("setup moneyOps individual test");},
 //	teardown:function(){alert("teardown moneyOps individual test");}
 });
@@ -44,7 +44,7 @@ QUnit.test("test_computeresults_other", function(assert)
 
         var c=new calc();
         c.computeResult(document.getElementById('form0'));
-        assert.equal(c.message,"Unsupported operation SUB");
+        assert.equal(c.message,"Result : 0 (EU)");
 }
 );
 
@@ -57,7 +57,7 @@ QUnit.test("test_displayResult", function(assert)
         fixtureNode.innerHTML=fixture;
 
         var c=new calc();
-        c.message="Result : 4 (EU)";
+        c.message="4 (EU)";
         c.displayResult(document.getElementById('res'));
         assert.equal(document.getElementById('res').innerHTML,"Result : 4 (EU)");
 }

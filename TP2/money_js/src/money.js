@@ -3,10 +3,10 @@ var money= (function(){
 		if(v<0){
 			throw new ValueLowerZeroExec();
 		}
-		this.v=v;
 		if(curr.length>3){
 			throw new ErrorCurrencyLength();
 		}
+		this.v=v;
 		this.curr=curr;
 	}
 

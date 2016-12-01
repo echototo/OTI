@@ -24,6 +24,6 @@ ErrorCurrencyLength.prototype.toString=function(){
 function SubValueIncompatibleExc(){
 }
 
-ErrorCurrencyLength.SubValueIncompatibleExc.toString=function(){
+SubValueIncompatibleExc.prototype.toString=function(){
 		return "First param must be bigger than second";
 }
